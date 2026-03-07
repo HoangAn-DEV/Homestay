@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOKO HOME - Homestay tự check-in</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">KOKO HOME</div>
+        <nav>
+            <a href="#">Trang chủ</a>
+            <a href="#">Tra cứu booking</a>
+            <a href="#">Tạp hóa</a>
+            <a href="#">Liên hệ</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Khám phá KOKO HOME</h1>
+        <p>Không gian tự check-in, riêng tư & chill tại Cần Thơ</p>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">Chúng tôi có 7 không gian dành riêng cho bạn</h2>
+        
+        <div class="carousel-wrapper">
+            <button class="nav-arrow left-arrow" onclick="scrollRooms(-1)">&#10094;</button>
+            
+            <div class="carousel-track">
+                <div class="rooms-grid" id="roomsContainer">
+                    
+                    <div class="room-card">
+                        <h3>Xi nê</h3>
+                        <p>Trải nghiệm điện ảnh đỉnh cao với hình ảnh sắc nét tiêu chuẩn rạp phim, hoàn hảo cho một tối thư giãn.</p>
+                        <div class="amenities">
+                            <span class="amenity-tag">Máy chiếu</span>
+                            <span class="amenity-tag">Netflix chính chủ</span>
+                            <span class="amenity-tag">Giường lớn</span>
+                            <span class="amenity-tag">Wifi tốc độ cao</span>
+                        </div>
+                        <div class="price">
+                            <span>179.000 đ / 3h</span>
+                            <span>319.000 đ / đêm</span>
+                        </div>
+                    </div>
+
+                    <div class="room-card">
+                        <h3>Signature</h3>
+                        <p>Đẳng cấp khác biệt với phong cách Bắc Âu Scandinavia với ban công thoáng đãng và bồn tắm riêng biệt.</p>
+                        <div class="amenities">
+                            <span class="amenity-tag">Bồn tắm</span>
+                            <span class="amenity-tag">Máy chiếu</span>
+                            <span class="amenity-tag">Ban công</span>
+                            <span class="amenity-tag">Ghế lười</span>
+                        </div>
+                        <div class="price">
+                            <span>199.000 đ / 3h</span>
+                            <span>359.000 đ / đêm</span>
+                        </div>
+                    </div>
+
+                    <div class="room-card">
+                        <h3>Basic</h3>
+                        <p>Phong cách tối giản, tinh tế với đầy đủ tiện nghi, đáp ứng mọi nhu cầu thư giãn nhẹ nhàng của bạn.</p>
+                        <div class="amenities">
+                            <span class="amenity-tag">Boardgame</span>
+                            <span class="amenity-tag">Netflix chính chủ</span>
+                            <span class="amenity-tag">Bàn ăn</span>
+                        </div>
+                        <div class="price">
+                            <span>169.000 đ / 3h</span>
+                            <span>299.000 đ / đêm</span>
+                        </div>
+                    </div>
+
+                    <div class="room-card">
+                        <h3>Bliss</h3>
+                        <p>Một không gian ấm áp, thanh bình giúp bạn tận hưởng những phút giây thư thái tuyệt đối.</p>
+                        <div class="amenities">
+                            <span class="amenity-tag">Ghế đọc sách</span>
+                            <span class="amenity-tag">Cửa sổ lớn</span>
+                            <span class="amenity-tag">Máy chiếu</span>
+                            <span class="amenity-tag">Tủ lạnh</span>
+                        </div>
+                        <div class="price">
+                            <span>189.000 đ / 3h</span>
+                            <span>329.000 đ / đêm</span>
+                        </div>
+                    </div>
+
+                    <div class="room-card">
+                        <h3>Relax</h3>
+                        <p>Không gian thư giãn tối ưu, nơi mọi căng thẳng tan biến trong sự tĩnh lặng và dịu êm.</p>
+                        <div class="amenities">
+                            <span class="amenity-tag">Bồn tắm</span>
+                            <span class="amenity-tag">Ban công</span>
+                            <span class="amenity-tag">Ghế lười</span>
+                            <span class="amenity-tag">Máy chiếu</span>
+                        </div>
+                        <div class="price">
+                            <span>199.000 đ / 3h</span>
+                            <span>339.000 đ / đêm</span>
+                        </div>
+                    </div>
+
+                    <div class="room-card">
+                        <h3>Re-up – Gaming</h3>
+                        <p>Nạp lại năng lượng cho bản thân trong một không gian tinh tế và tràn đầy cảm hứng mới mẻ.</p>
+                        <div class="amenities">
+                            <span class="amenity-tag">Máy chơi game</span>
+                            <span class="amenity-tag">Ghế lười</span>
+                            <span class="amenity-tag">Máy chiếu</span>
+                            <span class="amenity-tag">Boardgame</span>
+                        </div>
+                        <div class="price">
+                            <span>199.000 đ / 3h</span>
+                            <span>359.000 đ / đêm</span>
+                        </div>
+                    </div>
+
+                    <div class="room-card">
+                        <h3>Lit</h3>
+                        <p>Không gian sống động, trẻ trung và cá tính, nơi mọi khoảnh khắc đều đáng nhớ.</p>
+                        <div class="amenities">
+                            <span class="amenity-tag">Máy chiếu</span>
+                            <span class="amenity-tag">Ghế đọc sách</span>
+                            <span class="amenity-tag">Boardgame</span>
+                            <span class="amenity-tag">Bàn ăn</span>
+                        </div>
+                        <div class="price">
+                            <span>179.000 đ / 3h</span>
+                            <span>319.000 đ / đêm</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div> 
+            <button class="nav-arrow right-arrow" onclick="scrollRooms(1)">&#10095;</button>
+            
+        </div> 
+    </div> 
+
+    <div id="bookingModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            
+            <h2 id="modalRoomName">Tên Phòng</h2>
+            
+            <div class="booking-container">
+                <div class="booking-left">
+                    <p class="modal-subtitle">Vui lòng chọn khung giờ bạn muốn đặt (Có thể chọn nhiều)</p>
+                    <div class="table-responsive">
+                        <table class="booking-table">
+                            <thead>
+                                <tr>
+                                    <th>Khung giờ</th>
+                                    <th>Thứ 2</th>
+                                    <th>Thứ 3</th>
+                                    <th>Thứ 4</th>
+                                    <th>Thứ 5</th>
+                                    <th>Thứ 6</th>
+                                    <th>Thứ 7</th>
+                                    <th>CN</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Sáng</strong><br>09:00 - 12:00</td>
+                                    <td class="available" data-price="189000">Trống</td>
+                                    <td class="available" data-price="189000">Trống</td>
+                                    <td class="available" data-price="189000">Trống</td>
+                                    <td class="available" data-price="189000">Trống</td>
+                                    <td class="available" data-price="189000">Trống</td>
+                                    <td class="available" data-price="189000">Trống</td>
+                                    <td class="available" data-price="189000">Trống</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Chiều</strong><br>13:00 - 16:00</td>
+                                    <td class="available" data-price="189000">Trống</td>
+                                    <td class="available" data-price="189000">Trống</td>
+                                    <td class="available" data-price="189000">Trống</td>
+                                    <td class="available" data-price="189000">Trống</td>
+                                    <td class="available" data-price="189000">Trống</td>
+                                    <td class="available" data-price="189000">Trống</td>
+                                    <td class="available" data-price="189000">Trống</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Qua đêm</strong><br>20:00 - 08:00</td>
+                                    <td class="available" data-price="329000">Trống</td>
+                                    <td class="available" data-price="329000">Trống</td>
+                                    <td class="available" data-price="329000">Trống</td>
+                                    <td class="available" data-price="329000">Trống</td>
+                                    <td class="available" data-price="329000">Trống</td>
+                                    <td class="available" data-price="329000">Trống</td>
+                                    <td class="available" data-price="329000">Trống</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="booking-right">
+                    <h3>Thông tin Đặt phòng</h3>
+                    <p class="discount-link">Bạn có mã giảm giá? <a href="#">Bấm vào đây!</a></p>
+
+                    <div class="form-group">
+                        <input type="text" placeholder="Họ và tên *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Số điện thoại *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email (Không bắt buộc)">
+                    </div>
+                    
+                    <ul class="form-notes">
+                        <li>Nếu điền email, thông tin đặt phòng sẽ được gửi đến email của bạn.</li>
+                        <li>Nếu không điền, Bạn sẽ tra cứu thông tin bằng số điện thoại trên website.</li>
+                    </ul>
+
+                    <div class="form-group">
+                        <label>Số lượng khách</label>
+                        <select id="guestCount" onchange="calculateTotal()">
+                            <option value="1">1</option>
+                            <option value="2" selected>2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <ul class="form-notes">
+                        <li>Nếu > 2 khách, Home xin phép phụ thu 50k/khách ạ!</li>
+                        <li>Home chỉ nhận tối đa 2 khách nếu book giờ qua đêm.</li>
+                    </ul>
+
+                    <div class="form-group">
+                        <label>Căn cước/Hộ chiếu</label>
+                        <div class="cccd-upload">
+                            <div class="upload-box">
+                                <span>+ Mặt trước</span>
+                                <input type="file" accept="image/*">
+                            </div>
+                            <div class="upload-box">
+                                <span>+ Mặt sau</span>
+                                <input type="file" accept="image/*">
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="form-notes">
+                        <li>Home sử dụng ảnh CCCD của bạn để khai báo lưu trú và sẽ xóa sau khi check-out.</li>
+                    </ul>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="ageConfirm" required>
+                        <label for="ageConfirm">Người Đặt phòng xác nhận các khách đủ tuổi vị thành niên hoặc có người giám hộ đi kèm (đối với trẻ em) nhé.</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="total-price-box">
+                Tổng tạm tính: <span id="totalPrice">0</span> đ
+            </div>
+
+            <button class="confirm-btn">Xác nhận đặt phòng</button>
+        </div>
+    </div>
+
+    <script>
+        // 1. CAROUSEL TRƯỢT MƯỢT
+        let isAnimating = false; 
+        function scrollRooms(direction) {
+            if (isAnimating) return; 
+            isAnimating = true;
+            const container = document.getElementById('roomsContainer');
+            const cardWidth = container.firstElementChild.offsetWidth + 25; 
+
+            if (direction === 1) { 
+                container.style.transition = 'transform 0.3s ease-in-out';
+                container.style.transform = `translateX(-${cardWidth}px)`;
+                setTimeout(() => {
+                    container.style.transition = 'none';
+                    container.appendChild(container.firstElementChild);
+                    container.style.transform = 'translateX(0)';
+                    isAnimating = false;
+                }, 300);
+            } else { 
+                container.style.transition = 'none';
+                container.prepend(container.lastElementChild);
+                container.style.transform = `translateX(-${cardWidth}px)`;
+                setTimeout(() => {
+                    container.style.transition = 'transform 0.3s ease-in-out';
+                    container.style.transform = 'translateX(0)';
+                }, 10); 
+                setTimeout(() => { isAnimating = false; }, 300);
+            }
+        }
+
+        // 2. MỞ / ĐÓNG POPUP ĐẶT PHÒNG
+        function openModal(roomName) {
+            document.getElementById('modalRoomName').innerText = 'Bảng đặt phòng: ' + roomName;
+            document.getElementById('bookingModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+            document.querySelectorAll('.booking-table td.selected').forEach(cell => {
+                cell.classList.remove('selected');
+                cell.innerText = 'Trống';
+            });
+            document.getElementById('guestCount').value = "2";
+            document.getElementById('totalPrice').innerText = '0';
+        }
+
+        document.querySelectorAll('.room-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const roomName = this.querySelector('h3').innerText;
+                openModal(roomName);
+            });
+        });
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target == modal) { closeModal(); }
+        }
+
+        // 3. TÍNH TỔNG TIỀN VÀ PHỤ THU KHÁCH
+        function calculateTotal() {
+            let total = 0;
+            let selectedCells = document.querySelectorAll('.booking-table td.selected');
+            
+            selectedCells.forEach(cell => {
+                total += parseInt(cell.getAttribute('data-price'));
+            });
+            
+            let guestCount = parseInt(document.getElementById('guestCount').value);
+            if (selectedCells.length > 0 && guestCount > 2) {
+                let surcharge = (guestCount - 2) * 50000;
+                total += surcharge;
+            }
+            
+            document.getElementById('totalPrice').innerText = total.toLocaleString('vi-VN');
+        }
+
+        // 4. SỰ KIỆN CLICK CHỌN GIỜ TRONG BẢNG
+        document.querySelectorAll('.booking-table td.available').forEach(cell => {
+            cell.addEventListener('click', function() {
+                this.classList.toggle('selected');
+                if (this.classList.contains('selected')) {
+                    this.innerText = 'Đang chọn';
+                } else {
+                    this.innerText = 'Trống';
+                }
+                calculateTotal();
+            });
+        });
+    </script>
+</body>
+</html>

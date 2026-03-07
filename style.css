@@ -6,13 +6,13 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
-    background-color: #f7f9fa; /* Màu nền xám nhạt */
-    color: #333;
+    background-color: #8fbaff; /* Màu nền xám nhạt */
+    color: #ffffff;
 }
 
 /* --- HEADER --- */
 header {
-    background-color: #ffffff;
+    background-color: #78acff;
     padding: 15px 40px;
     display: flex;
     justify-content: space-between;
@@ -25,34 +25,34 @@ header {
 .logo {
     font-size: 24px;
     font-weight: 800;
-    color: #d35400; /* Màu cam đặc trưng */
+    color: #ffffff; /* Màu cam đặc trưng */
     letter-spacing: 1px;
 }
 nav a {
     margin-left: 20px;
     text-decoration: none;
-    color: #555;
+    color: #ffffff;
     font-weight: 600;
     transition: color 0.3s;
 }
 nav a:hover {
-    color: #d35400;
+    color: #1194ff;
 }
 
 /* --- HERO SECTION --- */
 .hero {
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(to right, #ffeadd, #fff3ec);
+    background: linear-gradient(to right, #ffffff, #ffffff);
 }
 .hero h1 {
-    color: #d35400;
+    color: #00bbff;
     font-size: 32px;
     margin-bottom: 10px;
 }
 .hero p {
     font-size: 18px;
-    color: #666;
+    color: #007a9f;
 }
 
 /* --- CAROUSEL WRAPPER & MŨI TÊN --- */
@@ -84,7 +84,7 @@ nav a:hover {
 /* Nút bấm mũi tên */
 .nav-arrow {
     background-color: #fff;
-    color: #d35400;
+    color: #78acff;
     border: 1px solid #ffeadd;
     border-radius: 50%;
     width: 45px;
@@ -101,7 +101,7 @@ nav a:hover {
 }
 
 .nav-arrow:hover {
-    background-color: #d35400;
+    background-color: #589bff;
     color: #fff;
 }
 
@@ -156,17 +156,17 @@ nav a:hover {
     margin-bottom: 20px;
 }
 .amenity-tag {
-    background-color: #f0f2f5;
+    background-color: #426393;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 12px;
     font-weight: 500;
-    color: #555;
+    color: #ffffff;
 }
 .price {
     font-size: 16px;
     font-weight: 700;
-    color: #d35400;
+    color: #ff0000;
     border-top: 1px solid #eee;
     padding-top: 15px;
 }
@@ -217,11 +217,11 @@ nav a:hover {
 }
 
 .close-btn:hover {
-    color: #d35400;
+    color: #78acff;
 }
 
 .modal-content h2 {
-    color: #d35400;
+    color: #78acff;
     margin-bottom: 5px;
 }
 
@@ -277,7 +277,7 @@ nav a:hover {
 
 /* Nút xác nhận */
 .confirm-btn {
-    background-color: #d35400;
+    background-color: #78acff;
     color: #fff;
     border: none;
     padding: 12px 20px;
@@ -290,14 +290,14 @@ nav a:hover {
 }
 
 .confirm-btn:hover {
-    background-color: #b04600;
+    background-color: #1b3766;
 }
 /* Trạng thái đang chọn (Khi người dùng click vào) */
 .selected {
     background-color: #ffe0cc !important; /* Nền màu cam nhạt */
-    color: #d35400 !important; /* Chữ màu cam đậm */
+    color: #78acff !important; /* Chữ màu cam đậm */
     font-weight: bold;
-    border: 2px solid #d35400 !important; /* Viền cam báo hiệu đang chọn */
+    border: 2px solid #78acff !important; /* Viền cam báo hiệu đang chọn */
     transform: scale(0.95); /* Hiệu ứng lún xuống một chút cho sinh động */
 }
 /* Trang trí khu vực hiển thị Tổng tiền */
@@ -312,7 +312,7 @@ nav a:hover {
 }
 
 .total-price-box span {
-    color: #d35400; /* Màu cam nổi bật */
+    color: #ff0000; /* Màu cam nổi bật */
     font-size: 24px;
     margin: 0 5px;
 }
@@ -350,10 +350,14 @@ nav a:hover {
 /* --- TRANG TRÍ FORM THÔNG TIN --- */
 .booking-right h3 {
     font-size: 18px;
-    color: #d35400;
+    color: #78acff;
     margin-bottom: 10px;
     border-bottom: 1px dashed #ccc;
     padding-bottom: 10px;
+}
+
+.booking-table td:first-child { 
+    color: rgb(0, 0, 0);              /* màu chữ */
 }
 
 .discount-link {
@@ -363,7 +367,7 @@ nav a:hover {
 }
 
 .discount-link a {
-    color: #d35400;
+    color: #78acff;
     font-weight: bold;
     text-decoration: none;
 }
@@ -385,7 +389,7 @@ nav a:hover {
 }
 
 .form-group input:focus, .form-group select:focus {
-    border-color: #d35400;
+    border-color: #78acff;
 }
 
 .form-group label {
@@ -427,7 +431,7 @@ nav a:hover {
 }
 
 .upload-box:hover {
-    border-color: #d35400;
+    border-color: #78acff;
     background-color: #ffe0cc;
 }
 

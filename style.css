@@ -1,16 +1,25 @@
-/* CSS Reset cơ bản */
+/* =========================================
+   CSS Reset cơ bản:
+   Đặt lại margin, padding về 0 cho tất cả phần tử
+   và áp dụng font chữ mặc định cho toàn trang
+   ========================================= */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+/* Màu nền tổng thể của trang và màu chữ mặc định */
 body {
-    background-color: #8fbaff; /* Màu nền xám nhạt */
+    background-color: #8fbaff;
     color: #ffffff;
 }
 
-/* --- HEADER --- */
+
+/* =========================================
+   HEADER: Thanh điều hướng cố định ở trên cùng
+   Hiển thị logo bên trái, menu nav bên phải
+   ========================================= */
 header {
     background-color: #78acff;
     padding: 15px 40px;
@@ -22,12 +31,14 @@ header {
     top: 0;
     z-index: 100;
 }
+/* Tên thương hiệu / logo chữ */
 .logo {
     font-size: 24px;
     font-weight: 800;
-    color: #ffffff; /* Màu cam đặc trưng */
+    color: #ffffff;
     letter-spacing: 1px;
 }
+/* Các link điều hướng trong menu */
 nav a {
     margin-left: 20px;
     text-decoration: none;
@@ -35,53 +46,67 @@ nav a {
     font-weight: 600;
     transition: color 0.3s;
 }
+/* Đổi màu chữ khi hover vào link menu */
 nav a:hover {
     color: #1194ff;
 }
 
-/* --- HERO SECTION --- */
+
+/* =========================================
+   HERO SECTION: Banner giới thiệu chính
+   Nằm ngay dưới header, chứa tiêu đề và tagline
+   ========================================= */
 .hero {
     text-align: center;
     padding: 60px 20px;
     background: linear-gradient(to right, #ffffff, #ffffff);
 }
+/* Tiêu đề lớn của banner */
 .hero h1 {
     color: #00bbff;
     font-size: 32px;
     margin-bottom: 10px;
 }
+/* Dòng mô tả ngắn bên dưới tiêu đề */
 .hero p {
     font-size: 18px;
     color: #007a9f;
 }
 
-/* --- CAROUSEL WRAPPER & MŨI TÊN --- */
+
+/* =========================================
+   CAROUSEL WRAPPER & MŨI TÊN ĐIỀU HƯỚNG:
+   Khung bọc toàn bộ khu vực danh sách phòng,
+   bao gồm nút mũi tên trái/phải và dải phòng
+   ========================================= */
+
+/* Giới hạn chiều rộng tối đa, căn giữa trang */
 .container {
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
 }
+/* Tiêu đề "Danh sách phòng" phía trên carousel */
 .section-title {
     text-align: center;
     margin-bottom: 30px;
     font-size: 24px;
 }
-
-/* Khung bọc tổng (chứa cả mũi tên và danh sách) */
+/* Khung bọc tổng: chứa cả mũi tên và dải trượt,
+   dùng position: relative để định vị mũi tên tuyệt đối */
 .carousel-wrapper {
     position: relative;
     display: flex;
     align-items: center;
 }
-
-/* Rãnh trượt: Giới hạn khung nhìn, cắt bỏ các thẻ bị tràn ra ngoài */
+/* Rãnh trượt: overflow hidden để cắt các thẻ tràn ra ngoài khung nhìn,
+   JS sẽ dùng translateX để điều khiển trượt bên trong đây */
 .carousel-track {
     overflow: hidden; 
     width: 100%;
-    padding: 20px 0; /* Tránh làm mất bóng đổ (shadow) của thẻ */
+    padding: 20px 0;
 }
-
-/* Nút bấm mũi tên */
+/* Style chung cho 2 nút mũi tên trái và phải */
 .nav-arrow {
     background-color: #fff;
     color: #78acff;
@@ -99,48 +124,57 @@ nav a:hover {
     justify-content: center;
     align-items: center;
 }
-
+/* Đổi nền khi hover vào nút mũi tên */
 .nav-arrow:hover {
     background-color: #589bff;
     color: #fff;
 }
-
-/* Vị trí mũi tên */
+/* Vị trí nút mũi tên trái (scrollRooms(-1): xem phòng trước) */
 .left-arrow {
     left: -20px; 
 }
+/* Vị trí nút mũi tên phải (scrollRooms(1): xem phòng tiếp theo) */
 .right-arrow {
     right: -20px; 
 }
 
-/* --- DANH SÁCH PHÒNG (DÙNG CHO JS CAROUSEL) --- */
+
+/* =========================================
+   ROOMS GRID: Dải chứa tất cả thẻ phòng
+   JS thao tác translateX lên element này
+   để tạo hiệu ứng trượt vòng lặp vô tận
+   ========================================= */
 .rooms-grid {
     display: flex; 
     gap: 25px;
-    /* Không dùng overflow-x: auto nữa vì JS sẽ điều khiển việc trượt */
 }
 
-/* --- ROOM CARD --- */
+
+/* =========================================
+   ROOM CARD: Thẻ hiển thị thông tin từng phòng
+   Click vào thẻ sẽ kích hoạt openModal() trong JS,
+   truyền tên phòng lấy từ thẻ <h3> vào popup đặt phòng
+   ========================================= */
 .room-card {
     background-color: #fff;
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
-    
-    /* Thiết lập cố định kích thước thẻ */
-    flex: 0 0 320px; 
-    cursor: pointer; /* Báo hiệu có thể click vào thẻ */
+    flex: 0 0 320px; /* Cố định chiều rộng mỗi thẻ để carousel hoạt động đúng */
+    cursor: pointer;
 }
-
+/* Hiệu ứng nổi lên khi hover vào thẻ phòng */
 .room-card:hover {
     transform: translateY(-5px);
 }
+/* Tên phòng (ví dụ: Xi nê, Signature, ...) */
 .room-card h3 {
     font-size: 22px;
     color: #222;
     margin-bottom: 10px;
 }
+/* Mô tả ngắn về phòng */
 .room-card p {
     font-size: 14px;
     color: #666;
@@ -148,13 +182,19 @@ nav a:hover {
     line-height: 1.5;
 }
 
-/* --- THẺ TIỆN ÍCH & GIÁ --- */
+
+/* =========================================
+   AMENITY TAGS & GIÁ PHÒNG:
+   Hiển thị các tag tiện nghi và bảng giá theo giờ/đêm
+   ========================================= */
+/* Khu vực chứa các tag tiện nghi (flex wrap để xuống dòng tự nhiên) */
 .amenities {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 20px;
 }
+/* Từng tag tiện nghi (ví dụ: Máy chiếu, Netflix, ...) */
 .amenity-tag {
     background-color: #426393;
     padding: 6px 12px;
@@ -163,6 +203,7 @@ nav a:hover {
     font-weight: 500;
     color: #ffffff;
 }
+/* Khu vực hiển thị giá phòng, nằm dưới cùng của thẻ */
 .price {
     font-size: 16px;
     font-weight: 700;
@@ -170,43 +211,51 @@ nav a:hover {
     border-top: 1px solid #eee;
     padding-top: 15px;
 }
+/* Mỗi dòng giá (theo giờ / theo đêm) xuống hàng riêng */
 .price span {
     display: block;
     margin-bottom: 5px;
 }
 
-/* =========================================
-   --- POPUP / MODAL BẢNG ĐẶT PHÒNG --- 
-   ========================================= */
 
+/* =========================================
+   MODAL OVERLAY: Lớp phủ tối phía sau popup
+   Hiện khi JS gọi openModal(), ẩn khi closeModal()
+   Click vào vùng tối này sẽ tự đóng popup (xử lý trong window.onclick)
+   ========================================= */
 .modal-overlay {
-    display: none; /* Ẩn đi khi chưa bấm */
+    display: none;
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.6); /* Nền đen mờ */
-    z-index: 1000; /* Nổi lên trên cùng */
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1000;
     justify-content: center;
     align-items: center;
 }
 
+
+/* =========================================
+   MODAL CONTENT: Hộp popup chứa toàn bộ nội dung đặt phòng
+   Bao gồm: tiêu đề phòng, bảng chọn giờ, form nhập thông tin
+   (Khai báo 2 lần — block dưới ghi đè max-width cho bố cục 2 cột)
+   ========================================= */
 .modal-content {
     background-color: #fff;
     padding: 30px;
     border-radius: 12px;
     width: 90%;
-    max-width: 800px; /* Độ rộng tối đa của bảng */
+    max-width: 800px;
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    /* Hiệu ứng trượt nhẹ từ trên xuống khi mở */
     animation: slideDown 0.3s ease-out forwards;
 }
-
+/* Keyframe: popup xuất hiện bằng cách trượt từ trên xuống */
 @keyframes slideDown {
     from { opacity: 0; transform: translateY(-30px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
+/* Nút X đóng popup ở góc phải trên, gọi closeModal() khi click */
 .close-btn {
     position: absolute;
     top: 15px; right: 20px;
@@ -215,67 +264,71 @@ nav a:hover {
     cursor: pointer;
     font-weight: bold;
 }
-
+/* Đổi màu nút X khi hover */
 .close-btn:hover {
     color: #78acff;
 }
-
+/* Tiêu đề popup: JS cập nhật nội dung qua id="modalRoomName" */
 .modal-content h2 {
     color: #78acff;
     margin-bottom: 5px;
 }
-
+/* Dòng hướng dẫn "Vui lòng chọn khung giờ" bên dưới tiêu đề */
 .modal-subtitle {
     color: #666;
     margin-bottom: 20px;
     font-size: 14px;
 }
 
-/* --- TRANG TRÍ BẢNG (TABLE) --- */
+
+/* =========================================
+   BOOKING TABLE: Bảng lịch đặt phòng theo ngày & khung giờ
+   Các ô trạng thái (.available / .booked / .selected) được JS toggle
+   calculateTotal() được gọi mỗi khi trạng thái ô thay đổi
+   ========================================= */
+/* Wrapper cho phép cuộn ngang bảng trên màn hình nhỏ */
 .table-responsive {
-    overflow-x: auto; /* Cuộn ngang bảng nếu màn hình điện thoại nhỏ */
+    overflow-x: auto;
     margin-bottom: 20px;
 }
-
+/* Bảng lịch đặt phòng chính */
 .booking-table {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
     font-size: 14px;
 }
-
+/* Style chung cho ô header và ô dữ liệu */
 .booking-table th, .booking-table td {
     border: 1px solid #eee;
     padding: 12px 8px;
 }
-
+/* Hàng tiêu đề: Khung giờ | Thứ 2 → CN */
 .booking-table th {
     background-color: #f8f9fa;
     font-weight: 600;
     color: #333;
 }
-
-/* Trạng thái phòng trống/đã đặt */
+/* Ô phòng còn trống, có thể click để chọn (data-price dùng để tính tổng tiền) */
 .available {
-    background-color: #e8f5e9; /* Xanh lá nhạt */
+    background-color: #e8f5e9;
     color: #2e7d32;
     cursor: pointer;
     font-weight: 500;
     transition: 0.2s;
 }
-
+/* Làm đậm ô trống khi di chuột vào */
 .available:hover {
-    background-color: #c8e6c9; /* Xanh lá đậm hơn khi hover */
+    background-color: #c8e6c9;
 }
-
+/* Ô phòng đã được đặt, không thể click */
 .booked {
-    background-color: #ffebee; /* Đỏ nhạt */
+    background-color: #ffebee;
     color: #c62828;
     cursor: not-allowed;
     font-weight: 500;
 }
-
-/* Nút xác nhận */
+/* Nút xác nhận đặt phòng cuối form */
 .confirm-btn {
     background-color: #78acff;
     color: #fff;
@@ -288,19 +341,31 @@ nav a:hover {
     cursor: pointer;
     transition: 0.3s;
 }
-
+/* Đổi màu nền khi hover nút xác nhận */
 .confirm-btn:hover {
     background-color: #1b3766;
 }
-/* Trạng thái đang chọn (Khi người dùng click vào) */
+/* Ô đang được chọn bởi người dùng (JS toggle class này khi click ô available)
+   calculateTotal() tính lại tổng tiền mỗi khi class này được thêm/xóa */
 .selected {
-    background-color: #ffe0cc !important; /* Nền màu cam nhạt */
-    color: #78acff !important; /* Chữ màu cam đậm */
+    background-color: #ffe0cc !important;
+    color: #78acff !important;
     font-weight: bold;
-    border: 2px solid #78acff !important; /* Viền cam báo hiệu đang chọn */
-    transform: scale(0.95); /* Hiệu ứng lún xuống một chút cho sinh động */
+    border: 2px solid #78acff !important;
+    transform: scale(0.95); /* Hiệu ứng lún nhẹ phản hồi thao tác chọn */
 }
-/* Trang trí khu vực hiển thị Tổng tiền */
+/* Cột đầu tiên (tên khung giờ: Sáng / Chiều / Qua đêm) dùng màu đen để dễ đọc */
+.booking-table td:first-child { 
+    color: rgb(0, 0, 0);
+}
+
+
+/* =========================================
+   TỔNG TIỀN TẠM TÍNH:
+   Hiển thị kết quả từ hàm calculateTotal() trong JS
+   id="totalPrice" được JS cập nhật mỗi khi chọn/bỏ ô giờ
+   hoặc thay đổi số lượng khách trong dropdown
+   ========================================= */
 .total-price-box {
     text-align: right;
     font-size: 18px;
@@ -310,44 +375,52 @@ nav a:hover {
     padding-top: 15px;
     border-top: 1px dashed #ccc;
 }
-
+/* Số tiền được in to và màu đỏ để nổi bật */
 .total-price-box span {
-    color: #ff0000; /* Màu cam nổi bật */
+    color: #ff0000;
     font-size: 24px;
     margin: 0 5px;
 }
-/* =========================================
-   --- BỐ CỤC 2 CỘT CHO BẢNG ĐẶT PHÒNG --- 
-   ========================================= */
 
-/* Mở rộng modal to ra để chứa đủ 2 cột */
+
+/* =========================================
+   BỐ CỤC 2 CỘT CHO POPUP ĐẶT PHÒNG:
+   Ghi đè max-width để popup rộng hơn,
+   chia nội dung thành cột trái (bảng giờ)
+   và cột phải (form nhập thông tin khách)
+   ========================================= */
 .modal-content {
     max-width: 1000px; 
     width: 95%;
-    max-height: 90vh; /* Giới hạn chiều cao */
-    overflow-y: auto; /* Cuộn dọc nếu màn hình nhỏ */
+    max-height: 90vh;
+    overflow-y: auto; /* Cuộn dọc nếu nội dung vượt chiều cao màn hình */
 }
-
-/* Khung chứa 2 cột */
+/* Container chia 2 cột bằng flexbox */
 .booking-container {
     display: flex;
     gap: 30px;
     margin-top: 15px;
 }
-
+/* Cột trái: bảng chọn khung giờ (rộng hơn cột phải) */
 .booking-left {
-    flex: 1.5; /* Cột bảng giờ rộng hơn chút */
+    flex: 1.5;
 }
-
+/* Cột phải: form nhập thông tin khách đặt phòng */
 .booking-right {
-    flex: 1; /* Cột thông tin */
+    flex: 1;
     background: #fdfdfd;
     padding: 20px;
     border-radius: 8px;
     border: 1px solid #eee;
 }
 
-/* --- TRANG TRÍ FORM THÔNG TIN --- */
+
+/* =========================================
+   FORM NHẬP THÔNG TIN KHÁCH:
+   Gồm các trường: tên, SĐT, email, số khách,
+   upload CCCD và checkbox xác nhận độ tuổi
+   ========================================= */
+/* Tiêu đề "Thông tin Đặt phòng" trong cột phải */
 .booking-right h3 {
     font-size: 18px;
     color: #78acff;
@@ -355,27 +428,23 @@ nav a:hover {
     border-bottom: 1px dashed #ccc;
     padding-bottom: 10px;
 }
-
-.booking-table td:first-child { 
-    color: rgb(0, 0, 0);              /* màu chữ */
-}
-
+/* Dòng "Bạn có mã giảm giá?" */
 .discount-link {
     font-size: 14px;
     margin-bottom: 15px;
     color: #333;
 }
-
+/* Link "Bấm vào đây!" trong dòng mã giảm giá */
 .discount-link a {
     color: #78acff;
     font-weight: bold;
     text-decoration: none;
 }
-
+/* Khoảng cách giữa các trường trong form */
 .form-group {
     margin-bottom: 15px;
 }
-
+/* Style chung cho ô nhập liệu text, tel, email và dropdown số khách */
 .form-group input[type="text"],
 .form-group input[type="tel"],
 .form-group input[type="email"],
@@ -387,11 +456,11 @@ nav a:hover {
     font-size: 14px;
     outline: none;
 }
-
+/* Viền xanh khi đang focus vào ô nhập liệu */
 .form-group input:focus, .form-group select:focus {
     border-color: #78acff;
 }
-
+/* Nhãn label của các trường (Số lượng khách, CCCD, ...) */
 .form-group label {
     display: block;
     font-weight: bold;
@@ -399,7 +468,7 @@ nav a:hover {
     margin-bottom: 8px;
     color: #333;
 }
-
+/* Ghi chú nhỏ bên dưới mỗi trường (phụ thu, lưu ý email, ...) */
 .form-notes {
     font-size: 12px;
     color: #666;
@@ -407,17 +476,22 @@ nav a:hover {
     margin-bottom: 15px;
     line-height: 1.5;
 }
-
 .form-notes li {
     margin-bottom: 4px;
 }
 
-/* Khu vực tải ảnh CCCD */
+
+/* =========================================
+   UPLOAD CCCD / HỘ CHIẾU:
+   2 ô upload ảnh mặt trước và mặt sau
+   Input file được ẩn hoàn toàn, click vào box là mở hộp chọn file
+   ========================================= */
+/* Wrapper chứa 2 ô upload cạnh nhau */
 .cccd-upload {
     display: flex;
     gap: 10px;
 }
-
+/* Từng ô upload (mặt trước / mặt sau) */
 .upload-box {
     flex: 1;
     border: 2px dashed #ddd;
@@ -429,38 +503,40 @@ nav a:hover {
     background: #fafafa;
     transition: 0.3s;
 }
-
+/* Đổi viền và nền khi hover vào ô upload */
 .upload-box:hover {
     border-color: #78acff;
     background-color: #ffe0cc;
 }
-
+/* Input file ẩn, phủ lên toàn bộ ô upload để click vào đâu cũng mở được */
 .upload-box input[type="file"] {
     position: absolute;
     top: 0; left: 0; 
     width: 100%; height: 100%;
-    opacity: 0; /* Ẩn nút chọn file mặc định xấu xí đi */
+    opacity: 0;
     cursor: pointer;
 }
-
+/* Chữ "+ Mặt trước" / "+ Mặt sau" hiển thị trong ô upload */
 .upload-box span {
     font-size: 13px;
     color: #555;
     font-weight: bold;
 }
 
-/* Ô Checkbox xác nhận */
+
+/* =========================================
+   CHECKBOX XÁC NHẬN ĐỘ TUỔI:
+   Bắt buộc phải tick trước khi submit đặt phòng
+   ========================================= */
 .checkbox-group {
     display: flex;
     align-items: flex-start;
     gap: 10px;
 }
-
 .checkbox-group input {
     margin-top: 3px;
     cursor: pointer;
 }
-
 .checkbox-group label {
     font-weight: normal;
     font-size: 13px;
@@ -469,7 +545,12 @@ nav a:hover {
     cursor: pointer;
 }
 
-/* Reponsive: Chuyển thành 1 cột trên điện thoại */
+
+/* =========================================
+   RESPONSIVE - ĐIỆN THOẠI (max-width: 768px):
+   Chuyển bố cục 2 cột thành 1 cột dọc
+   để hiển thị đúng trên màn hình nhỏ
+   ========================================= */
 @media (max-width: 768px) {
     .booking-container {
         flex-direction: column;

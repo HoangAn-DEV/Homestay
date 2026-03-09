@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+    <!-- Thiết lập bảng mã tiếng Việt -->
     <meta charset="UTF-8">
+
+    <!-- Giúp website hiển thị tốt trên điện thoại và màn hình nhỏ -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tiêu đề trang web hiển thị trên tab trình duyệt -->
     <title>SKIBIDI TOLET HOMESTAY</title>
+
+    <!-- Liên kết file CSS để tạo giao diện -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Liên kết file JavaScript và defer để chạy sau khi HTML load -->
+    <script src="script.js" defer></script>
 </head>
 <body>
 
+    <!-- ===== HEADER: Logo và thanh menu điều hướng ===== -->
     <header>
+        <!-- Logo của homestay -->
         <div class="logo">SKIBIDI TOLET</div>
+
+        <!-- Menu điều hướng website -->
         <nav>
             <a href="#">Trang chủ</a>
             <a href="#">Tra cứu booking</a>
@@ -18,140 +32,207 @@
         </nav>
     </header>
 
+    <!-- ===== HERO SECTION: Banner giới thiệu chính ===== -->
     <section class="hero">
         <h1>Khám phá SKIBIDI TOLET</h1>
         <p>Không gian tự check-in, riêng tư & chill tại Cần Thơ</p>
     </section>
 
+    <!-- ===== CONTAINER CHỨA DANH SÁCH PHÒNG ===== -->
     <div class="container">
+
+        <!-- Tiêu đề section -->
         <h2 class="section-title">Chúng tôi không có phòng nào cho bạn!!!! </h2>
         
+        <!-- Wrapper của carousel (khu vực trượt phòng) -->
         <div class="carousel-wrapper">
+
+            <!-- Nút mũi tên trượt sang trái -->
             <button class="nav-arrow left-arrow" onclick="scrollRooms(-1)">&#10094;</button>
             
+            <!-- Track chứa toàn bộ danh sách phòng -->
             <div class="carousel-track">
+
+                <!-- Grid chứa các room-card -->
                 <div class="rooms-grid" id="roomsContainer">
                     
+                    <!-- ===== ROOM CARD 1 ===== -->
                     <div class="room-card">
                         <h3>Xi nê</h3>
+
+                        <!-- Mô tả phòng -->
                         <p>Trải nghiệm điện ảnh đỉnh cao với hình ảnh sắc nét tiêu chuẩn rạp phim, hoàn hảo cho một tối thư giãn.</p>
+
+                        <!-- Danh sách tiện nghi -->
                         <div class="amenities">
                             <span class="amenity-tag">Máy chiếu</span>
                             <span class="amenity-tag">Netflix chính chủ</span>
                             <span class="amenity-tag">Giường lớn</span>
                             <span class="amenity-tag">Wifi tốc độ cao</span>
                         </div>
+
+                        <!-- Giá thuê phòng -->
                         <div class="price">
                             <span>179.000 đ / 3h</span>
                             <span>319.000 đ / đêm</span>
                         </div>
                     </div>
+
+                    <!-- ===== ROOM CARD 2 ===== -->
                     <div class="room-card">
                         <h3>Signature</h3>
                         <p>Đẳng cấp khác biệt với phong cách Bắc Âu Scandinavia với ban công thoáng đãng và bồn tắm riêng biệt.</p>
+
+                        <!-- Tiện nghi -->
                         <div class="amenities">
                             <span class="amenity-tag">Bồn tắm</span>
                             <span class="amenity-tag">Máy chiếu</span>
                             <span class="amenity-tag">Ban công</span>
                             <span class="amenity-tag">Ghế lười</span>
                         </div>
+
+                        <!-- Giá -->
                         <div class="price">
                             <span>199.000 đ / 3h</span>
                             <span>359.000 đ / đêm</span>
                         </div>
                     </div>
 
+                    <!-- ===== ROOM CARD 3 ===== -->
                     <div class="room-card">
                         <h3>Basic</h3>
                         <p>Phong cách tối giản, tinh tế với đầy đủ tiện nghi, đáp ứng mọi nhu cầu thư giãn nhẹ nhàng của bạn.</p>
+
+                        <!-- Tiện nghi -->
                         <div class="amenities">
                             <span class="amenity-tag">Boardgame</span>
                             <span class="amenity-tag">Netflix chính chủ</span>
                             <span class="amenity-tag">Bàn ăn</span>
                         </div>
+
+                        <!-- Giá -->
                         <div class="price">
                             <span>169.000 đ / 3h</span>
                             <span>299.000 đ / đêm</span>
                         </div>
                     </div>
 
+                    <!-- ===== ROOM CARD 4 ===== -->
                     <div class="room-card">
                         <h3>Bliss</h3>
                         <p>Một không gian ấm áp, thanh bình giúp bạn tận hưởng những phút giây thư thái tuyệt đối.</p>
+
+                        <!-- Tiện nghi -->
                         <div class="amenities">
                             <span class="amenity-tag">Ghế đọc sách</span>
                             <span class="amenity-tag">Cửa sổ lớn</span>
                             <span class="amenity-tag">Máy chiếu</span>
                             <span class="amenity-tag">Tủ lạnh</span>
                         </div>
+
+                        <!-- Giá -->
                         <div class="price">
                             <span>189.000 đ / 3h</span>
                             <span>329.000 đ / đêm</span>
                         </div>
                     </div>
 
+                    <!-- ===== ROOM CARD 5 ===== -->
                     <div class="room-card">
                         <h3>Relax</h3>
                         <p>Không gian thư giãn tối ưu, nơi mọi căng thẳng tan biến trong sự tĩnh lặng và dịu êm.</p>
+
+                        <!-- Tiện nghi -->
                         <div class="amenities">
                             <span class="amenity-tag">Bồn tắm</span>
                             <span class="amenity-tag">Ban công</span>
                             <span class="amenity-tag">Ghế lười</span>
                             <span class="amenity-tag">Máy chiếu</span>
                         </div>
+
+                        <!-- Giá -->
                         <div class="price">
                             <span>199.000 đ / 3h</span>
                             <span>339.000 đ / đêm</span>
                         </div>
                     </div>
 
+                    <!-- ===== ROOM CARD 6 ===== -->
                     <div class="room-card">
                         <h3>Re-up – Gaming</h3>
                         <p>Nạp lại năng lượng cho bản thân trong một không gian tinh tế và tràn đầy cảm hứng mới mẻ.</p>
+
+                        <!-- Tiện nghi -->
                         <div class="amenities">
                             <span class="amenity-tag">Máy chơi game</span>
                             <span class="amenity-tag">Ghế lười</span>
                             <span class="amenity-tag">Máy chiếu</span>
                             <span class="amenity-tag">Boardgame</span>
                         </div>
+
+                        <!-- Giá -->
                         <div class="price">
                             <span>199.000 đ / 3h</span>
                             <span>359.000 đ / đêm</span>
                         </div>
                     </div>
 
+                    <!-- ===== ROOM CARD 7 ===== -->
                     <div class="room-card">
                         <h3>Lit</h3>
                         <p>Không gian sống động, trẻ trung và cá tính, nơi mọi khoảnh khắc đều đáng nhớ.</p>
+
+                        <!-- Tiện nghi -->
                         <div class="amenities">
                             <span class="amenity-tag">Máy chiếu</span>
                             <span class="amenity-tag">Ghế đọc sách</span>
                             <span class="amenity-tag">Boardgame</span>
                             <span class="amenity-tag">Bàn ăn</span>
                         </div>
+
+                        <!-- Giá -->
                         <div class="price">
                             <span>179.000 đ / 3h</span>
                             <span>319.000 đ / đêm</span>
                         </div>
                     </div>
 
-                </div> </div> <button class="nav-arrow right-arrow" onclick="scrollRooms(1)">&#10095;</button>
+                </div> <!-- Kết thúc rooms-grid -->
+            </div> 
+
+            <!-- Nút mũi tên trượt sang phải -->
+            <button class="nav-arrow right-arrow" onclick="scrollRooms(1)">&#10095;</button>
             
         </div> 
     </div> 
 
+    <!-- ===== MODAL ĐẶT PHÒNG (POPUP) ===== -->
     <div id="bookingModal" class="modal-overlay">
+
+        <!-- Nội dung popup -->
         <div class="modal-content">
+
+            <!-- Nút đóng modal -->
             <span class="close-btn" onclick="closeModal()">&times;</span>
             
+            <!-- Tên phòng được JS thay đổi -->
             <h2 id="modalRoomName">Tên Phòng</h2>
             
+            <!-- Container chia 2 phần: chọn giờ + nhập thông tin -->
             <div class="booking-container">
                 
+                <!-- ===== BÊN TRÁI: BẢNG CHỌN KHUNG GIỜ ===== -->
                 <div class="booking-left">
+
+                    <!-- Hướng dẫn chọn giờ -->
                     <p class="modal-subtitle">Vui lòng chọn khung giờ bạn muốn đặt (Có thể chọn nhiều)</p>
+
+                    <!-- Bảng thời gian đặt phòng -->
                     <div class="table-responsive">
+
                         <table class="booking-table">
+
+                            <!-- Tiêu đề bảng -->
                             <thead>
                                 <tr>
                                     <th>Khung giờ</th>
@@ -164,7 +245,11 @@
                                     <th>CN</th>
                                 </tr>
                             </thead>
+
+                            <!-- Nội dung bảng -->
                             <tbody>
+
+                                <!-- Khung giờ sáng -->
                                 <tr>
                                     <td><strong>Sáng</strong><br>09:00 - 12:00</td>
                                     <td class="available" data-price="189000">Trống</td>
@@ -175,6 +260,8 @@
                                     <td class="available" data-price="189000">Trống</td>
                                     <td class="available" data-price="189000">Trống</td>
                                 </tr>
+
+                                <!-- Khung giờ chiều -->
                                 <tr>
                                     <td><strong>Chiều</strong><br>13:00 - 16:00</td>
                                     <td class="available" data-price="189000">Trống</td>
@@ -185,6 +272,8 @@
                                     <td class="available" data-price="189000">Trống</td>
                                     <td class="available" data-price="189000">Trống</td>
                                 </tr>
+
+                                <!-- Khung giờ qua đêm -->
                                 <tr>
                                     <td><strong>Qua đêm</strong><br>20:00 - 08:00</td>
                                     <td class="available" data-price="329000">Trống</td>
@@ -195,32 +284,47 @@
                                     <td class="available" data-price="329000">Trống</td>
                                     <td class="available" data-price="329000">Trống</td>
                                 </tr>
+
                             </tbody>
                         </table>
                     </div>
                 </div>
 
+                <!-- ===== BÊN PHẢI: FORM NHẬP THÔNG TIN ===== -->
                 <div class="booking-right">
+
+                    <!-- Tiêu đề form -->
                     <h3>Thông tin Đặt phòng</h3>
+
+                    <!-- Link nhập mã giảm giá -->
                     <p class="discount-link">Bạn có mã giảm giá? <a href="#">Bấm vào đây!</a></p>
 
+                    <!-- Input họ tên -->
                     <div class="form-group">
                         <input type="text" placeholder="Họ và tên *" required>
                     </div>
+
+                    <!-- Input số điện thoại -->
                     <div class="form-group">
                         <input type="tel" placeholder="Số điện thoại *" required>
                     </div>
+
+                    <!-- Input email -->
                     <div class="form-group">
                         <input type="email" placeholder="Email (Không bắt buộc)">
                     </div>
-                    
+
+                    <!-- Ghi chú -->
                     <ul class="form-notes">
                         <li>Nếu điền email, thông tin đặt phòng sẽ được gửi đến email của bạn.</li>
                         <li>Nếu không điền, Bạn sẽ tra cứu thông tin bằng số điện thoại trên website.</li>
                     </ul>
 
+                    <!-- Chọn số lượng khách -->
                     <div class="form-group">
                         <label>Số lượng khách</label>
+
+                        <!-- onchange gọi JS để tính tiền -->
                         <select id="guestCount" onchange="calculateTotal()">
                             <option value="1">1</option>
                             <option value="2" selected>2</option>
@@ -228,178 +332,56 @@
                             <option value="4">4</option>
                         </select>
                     </div>
+
+                    <!-- Ghi chú phụ thu -->
                     <ul class="form-notes">
                         <li>Nếu > 2 khách, Home xin phép phụ thu 50k/khách ạ!</li>
                         <li>Home chỉ nhận tối đa 2 khách nếu book giờ qua đêm.</li>
                     </ul>
 
+                    <!-- Upload CCCD -->
                     <div class="form-group">
                         <label>Căn cước/Hộ chiếu</label>
+
                         <div class="cccd-upload">
+
+                            <!-- Upload ảnh mặt trước CCCD -->
                             <div class="upload-box">
                                 <span>+ Mặt trước</span>
                                 <input type="file" accept="image/*">
                             </div>
+
+                            <!-- Upload ảnh mặt sau CCCD -->
                             <div class="upload-box">
                                 <span>+ Mặt sau</span>
                                 <input type="file" accept="image/*">
                             </div>
+
                         </div>
                     </div>
+
+                    <!-- Ghi chú bảo mật CCCD -->
                     <ul class="form-notes">
                         <li>Home sử dụng ảnh CCCD của bạn để khai báo lưu trú và sẽ xóa sau khi check-out.</li>
                     </ul>
 
+                    <!-- Checkbox xác nhận độ tuổi -->
                     <div class="form-group checkbox-group">
                         <input type="checkbox" id="ageConfirm" required>
                         <label for="ageConfirm">Người Đặt phòng xác nhận các khách đủ tuổi vị thành niên hoặc có người giám hộ đi kèm (đối với trẻ em) nhé.</label>
                     </div>
                 </div>
-            </div> <div class="total-price-box">
+            </div>
+
+            <!-- Tổng tiền tạm tính -->
+            <div class="total-price-box">
                 Tổng tạm tính: <span id="totalPrice">0</span> đ
             </div>
+
+            <!-- Nút xác nhận đặt phòng -->
             <button class="confirm-btn">Xác nhận đặt phòng</button>
 
-        </div> </div> <script>
-        // ----------------------------------------------------
-        // 1. CHỨC NĂNG CAROUSEL TRƯỢT MƯỢT VÒNG LẶP VÔ TẬN
-        // ----------------------------------------------------
-        let isAnimating = false; // Biến cờ (flag) để chống spam click gây lỗi giao diện
-
-        function scrollRooms(direction) {
-            // Nếu đang trong quá trình trượt thì bỏ qua lệnh click mới
-            if (isAnimating) return; 
-            isAnimating = true;
-
-            const container = document.getElementById('roomsContainer');
-            // Lấy độ rộng của 1 thẻ phòng (bao gồm cả khoảng cách margin/gap là 25px) để biết cần trượt đi bao xa
-            const cardWidth = container.firstElementChild.offsetWidth + 25; 
-
-            if (direction === 1) { 
-                // TRƯỜNG HỢP: BẤM MŨI TÊN BÊN PHẢI (TRƯỢT TỚI)
-                container.style.transition = 'transform 0.3s ease-in-out'; // Bật hiệu ứng mượt
-                container.style.transform = `translateX(-${cardWidth}px)`; // Đẩy dải băng chuyền sang trái
-
-                // Đợi 300ms cho hiệu ứng trượt kết thúc
-                setTimeout(() => {
-                    container.style.transition = 'none'; // Tắt hiệu ứng mượt
-                    // Lấy thẻ phòng đầu tiên (đang bị khuất bên trái) chuyển xuống vị trí cuối cùng
-                    container.appendChild(container.firstElementChild);
-                    // Lập tức đưa dải băng chuyền về lại tọa độ 0 (do tắt hiệu ứng mượt nên người dùng không thấy bị giật)
-                    container.style.transform = 'translateX(0)';
-                    isAnimating = false; // Nhả cờ cho phép click tiếp
-                }, 300);
-
-            } else { 
-                // TRƯỜNG HỢP: BẤM MŨI TÊN BÊN TRÁI (TRƯỢT LÙI)
-                container.style.transition = 'none'; // Tắt hiệu ứng mượt
-                // Lấy thẻ phòng cuối cùng đưa lên đầu danh sách trước
-                container.prepend(container.lastElementChild);
-                // Đồng thời đẩy băng chuyền sang trái (để giấu thẻ vừa đưa lên đi)
-                container.style.transform = `translateX(-${cardWidth}px)`;
-
-                // Delay 10ms để trình duyệt kịp Render lại giao diện
-                setTimeout(() => {
-                    container.style.transition = 'transform 0.3s ease-in-out'; // Bật lại hiệu ứng mượt
-                    // Trượt băng chuyền về tọa độ 0 (giúp thẻ đầu tiên lộ diện mượt mà)
-                    container.style.transform = 'translateX(0)';
-                }, 10); 
-                
-                setTimeout(() => { isAnimating = false; }, 300);
-            }
-        }
-
-        // ----------------------------------------------------
-        // 2. CHỨC NĂNG ĐÓNG / MỞ BẢNG POPUP ĐẶT PHÒNG
-        // ----------------------------------------------------
-        
-        // Hàm mở Popup
-        function openModal(roomName) {
-            // Lấy tên phòng (tham số) đập vào tiêu đề của bảng Popup
-            document.getElementById('modalRoomName').innerText = 'Bảng đặt phòng: ' + roomName;
-            // Hiển thị khung Popup (từ display: none thành display: flex)
-            document.getElementById('bookingModal').style.display = 'flex';
-        }
-
-        // Hàm đóng Popup và Reset dữ liệu
-        function closeModal() {
-            // Ẩn khung Popup
-            document.getElementById('bookingModal').style.display = 'none';
-            
-            // Xóa toàn bộ lựa chọn trong bảng (tìm các ô có class 'selected')
-            document.querySelectorAll('.booking-table td.selected').forEach(cell => {
-                cell.classList.remove('selected'); // Gỡ class màu cam
-                cell.innerText = 'Trống';          // Trả lại chữ 'Trống'
-            });
-            
-            // Đưa mặc định số lượng khách về 2 và tổng tiền về 0
-            document.getElementById('guestCount').value = "2";
-            document.getElementById('totalPrice').innerText = '0';
-        }
-
-        // Lặp qua tất cả thẻ phòng để gắn sự kiện: Hễ click vào phòng là gọi hàm openModal()
-        document.querySelectorAll('.room-card').forEach(card => {
-            card.addEventListener('click', function() {
-                // Lấy tên phòng từ trong thẻ <h3> của chính thẻ được click
-                const roomName = this.querySelector('h3').innerText;
-                openModal(roomName);
-            });
-        });
-
-        // Sự kiện hỗ trợ: Nếu người dùng click chuột ra vùng tối (nền đen mờ) bên ngoài bảng thì tự động đóng bảng
-        window.onclick = function(event) {
-            const modal = document.getElementById('bookingModal');
-            if (event.target == modal) { closeModal(); }
-        }
-
-        // ----------------------------------------------------
-        // 3. CHỨC NĂNG TÍNH TỔNG TIỀN VÀ PHỤ THU
-        // ----------------------------------------------------
-        function calculateTotal() {
-            let total = 0;
-            // Thu thập tất cả các ô trên bảng ĐANG ĐƯỢC CHỌN
-            let selectedCells = document.querySelectorAll('.booking-table td.selected');
-            
-            // 3.1: Vòng lặp lấy giá trị 'data-price' của từng ô để cộng dồn vào tổng tiền
-            selectedCells.forEach(cell => {
-                total += parseInt(cell.getAttribute('data-price'));
-            });
-            
-            // 3.2: Xử lý logic phụ thu số lượng khách
-            let guestCount = parseInt(document.getElementById('guestCount').value);
-            // Chỉ tính phụ thu NẾU khách có chọn giờ VÀ chọn số khách > 2
-            if (selectedCells.length > 0 && guestCount > 2) {
-                // Mỗi khách dư ra sẽ nhân với 50.000đ
-                let surcharge = (guestCount - 2) * 50000;
-                total += surcharge;
-            }
-            
-            // 3.3: Định dạng số tiền (ví dụ: 500000 thành 500.000) và in ra thẻ HTML hiển thị
-            document.getElementById('totalPrice').innerText = total.toLocaleString('vi-VN');
-        }
-
-        // ----------------------------------------------------
-        // 4. CHỨC NĂNG CLICK CHỌN TỪNG Ô TRONG BẢNG GIỜ
-        // ----------------------------------------------------
-        // Lấy ra tất cả các ô có class 'available' (các ô được phép đặt)
-        document.querySelectorAll('.booking-table td.available').forEach(cell => {
-            // Lắng nghe sự kiện click cho từng ô
-            cell.addEventListener('click', function() {
-                
-                // Toggle (Bật/Tắt): Nếu chưa có class 'selected' thì thêm vào, nếu có rồi thì gỡ ra
-                this.classList.toggle('selected');
-                
-                // Đổi chữ hiển thị theo class hiện tại
-                if (this.classList.contains('selected')) {
-                    this.innerText = 'Đang chọn'; // Hiển thị Đang chọn
-                } else {
-                    this.innerText = 'Trống';     // Hủy chọn thì trả về Trống
-                }
-                
-                // Bước quan trọng: Cứ mỗi lần thao tác click trên bảng xong, phải bắt hệ thống tính lại Tổng tiền
-                calculateTotal();
-            });
-        });
-    </script>
+        </div>
+     </div> 
 </body>
 </html>
